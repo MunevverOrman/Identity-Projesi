@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div class="col-md-3">
+    <a href="/Message/SendMessage" class="btn btn-primary btn-block mb-3">Yeni Mail Gönder</a>
+
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">İşlemler</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item active">
+                    <a href="/Message/Index" class="nav-link">
+                        <i class="fas fa-inbox"></i> Gelen Kutusu
+                        <span class="badge bg-primary float-right">@ViewBag.ReceivedMessage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link">
+                        <i class="far fa-envelope"></i> Giden Kutusu
+                        <span class="badge bg-primary float-right">@ViewBag.sendedMessage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-file-alt"></i> Taslaklar
+                        <span class="badge bg-primary float-right">@ViewBag.draftMessage</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="far fa-trash-alt"></i> Çöp Kutusu
+                        <span class="badge bg-primary float-right">@ViewBag.deletedMessage</span>
+                    </a>
+                </li>
+              
+
+                <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle text-danger"></i>
+                                Önemli Mesajlar
+                        <span class="badge bg-primary float-right">@ViewBag.ImportantMessage</span>
+                            </a>
+                        </li>
+            </ul>
+        </div>
+      
+    </div>
+ 
+   
+ 
+</div>

@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+    @await Component.InvokeAsync("_MainLayoutHeadComponent")
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        @await Component.InvokeAsync("_MainLayoutNavbarComponent")
+
+        <div class="container">
+            @await Component.InvokeAsync("_MainLayoutHeaderComponent")
+
+            <section class="content">
+                <div class="row">
+                    @await Component.InvokeAsync("_MainLayoutSidebarComponent")
+
+                    @RenderBody()
+                </div>
+            </section>
+
+        </div>
+
+        @await Component.InvokeAsync("_MainLayoutFooterComponent")
+
+    </div>
+
+    @await Component.InvokeAsync("_MainLayoutScriptsComponent")
+</body>
+</html>
