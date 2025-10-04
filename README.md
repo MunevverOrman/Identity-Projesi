@@ -40,20 +40,30 @@ gelen mesajlarını yönetebilmesini ve farklı klasörler altında düzenli bir
 - MS SQL Server
 - Bootstrap & AdminLTE
 - SweetAlert2
-<img width="1905" height="882" alt="Ekran görüntüsü 2025-10-04 174801" src="https://github.com/user-attachments/assets/d3fa9dc9-292f-46d9-9472-d8a83ae6c9e4" />
-<img width="1912" height="948" alt="Ekran görüntüsü 2025-10-04 180104" src="https://github.com/user-attachments/assets/fe006b26-097e-4a26-b676-989ea845b617" />
-<img width="1907" height="582" alt="Ekran görüntüsü 2025-10-04 180137" src="https://github.com/user-attachments/assets/f355a714-f447-4545-ab15-6db9e2c0657c" />
-<img width="936" height="587" alt="Ekran görüntüsü 2025-10-04 175051" src="https://github.com/user-attachments/assets/88f9d88b-1477-40b5-b5c3-58a1664e8f6c" />
-<img width="1898" height="918" alt="Ekran görüntüsü 2025-10-04 175114" src="https://github.com/user-attachments/assets/9b4d7f5b-69d3-4f28-8b31-2e1cc06129e6" />
-<img width="1882" height="912" alt="Ekran görüntüsü 2025-10-04 175200" src="https://github.com/user-attachments/assets/bb852e1e-974f-4975-85a1-64e4c970fc27" />
-<img width="1907" height="821" alt="Ekran görüntüsü 2025-10-04 175224" src="https://github.com/user-attachments/assets/ab2feade-4618-4c9d-9707-72051573f3a0" />
-<img width="1907" height="922" alt="Ekran görüntüsü 2025-10-04 175537" src="https://github.com/user-attachments/assets/fa869d91-12dd-49e4-aee8-29d99a016811" />
-<img width="1913" height="925" alt="Ekran görüntüsü 2025-10-04 175613" src="https://github.com/user-attachments/assets/36461144-522a-4765-adbd-b05ccead11f6" />
-<img width="1903" height="912" alt="Ekran görüntüsü 2025-10-04 175653" src="https://github.com/user-attachments/assets/6edb5896-f1a7-45c7-a1be-cd183367c4bb" />
-<img width="1907" height="907" alt="Ekran görüntüsü 2025-10-04 175712" src="https://github.com/user-attachments/assets/ec74a3a3-08fb-49f6-8d2d-d34685352615" />
-<img width="1903" height="902" alt="Ekran görüntüsü 2025-10-04 175731" src="https://github.com/user-attachments/assets/badca4d4-1685-4518-9eea-0156cb7da34d" />
-<img width="1903" height="901" alt="Ekran görüntüsü 2025-10-04 175804" src="https://github.com/user-attachments/assets/4a66a0ce-c4c7-4235-8c05-c3952d7461f5" />
-<img width="1906" height="907" alt="Ekran görüntüsü 2025-10-04 175930" src="https://github.com/user-attachments/assets/ace52a2a-83cf-44ae-8445-5e8957ed427d" />
 
-
-
+Kullanıcı Kaydı 
+<img width="1905" height="882" alt="Ekran görüntüsü 2025-10-04 174801" src="https://github.com/user-attachments/assets/0a5d8ce1-d25f-43f9-89c2-c2cf7d0909b0" />
+Kullanıcı Girişi
+<img width="1907" height="582" alt="Ekran görüntüsü 2025-10-04 180137" src="https://github.com/user-attachments/assets/0e98ac2b-12dd-49f1-ba2d-b1e7a641d006" />
+Kullanıcıya Son Gelen 3 Mesaj
+<img width="936" height="587" alt="3" src="https://github.com/user-attachments/assets/dab464b6-dae4-4881-897d-c03bd816ebbe" />
+Yeni Mail Gönderme
+<img width="1912" height="948" alt="Ekran görüntüsü 2025-10-04 180104" src="https://github.com/user-attachments/assets/92577072-bdfc-49e2-b480-125470c221b1" />
+Gelen Kutusu
+<img width="1898" height="918" alt="Ekran görüntüsü 2025-10-04 175114" src="https://github.com/user-attachments/assets/9f66ffaf-5311-4533-9026-c64147ee61d9" />
+Giden Kutusu
+<img width="1882" height="912" alt="Ekran görüntüsü 2025-10-04 175200" src="https://github.com/user-attachments/assets/323b09ff-50e7-4f90-b761-2c060e09153e" />
+Taslak Mesajlar
+<img width="1913" height="925" alt="Ekran görüntüsü 2025-10-04 175613" src="https://github.com/user-attachments/assets/ac7707e2-feb0-4cdc-acca-6fa0b0444321" />
+Taslak Mesajı Gönderme
+<img width="1907" height="821" alt="Ekran görüntüsü 2025-10-04 175224" src="https://github.com/user-attachments/assets/662f7a03-d529-44f3-ac57-fe338a3d8b5b" />
+Taslak Mesajı Düzenleme
+<img width="1907" height="922" alt="Ekran görüntüsü 2025-10-04 175537" src="https://github.com/user-attachments/assets/c0444934-9589-4e83-b7c3-a482ab62257a" />
+Çöp Kutusu
+<img width="1903" height="912" alt="Ekran görüntüsü 2025-10-04 175653" src="https://github.com/user-attachments/assets/a64a13ab-e553-45b0-8a80-2855ba271c01" />
+Çöp Kutusundan Kalıcı Silme
+<img width="1907" height="907" alt="Ekran görüntüsü 2025-10-04 175712" src="https://github.com/user-attachments/assets/6375f6c6-c634-4501-b667-ebf44f24eda8" />
+Yıldızlı Mesajlar
+<img width="1903" height="902" alt="Ekran görüntüsü 2025-10-04 175731" src="https://github.com/user-attachments/assets/4c4cb6a9-f4b3-4596-94dc-fcda8f8c15fe" />
+Arşivlenmiş Mesajlar
+<img width="1903" height="901" alt="Ekran görüntüsü 2025-10-04 175804" src="https://github.com/user-attachments/assets/a2d5ba9c-870d-4356-b39a-2725019effce" />
