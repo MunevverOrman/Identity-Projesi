@@ -1,0 +1,102 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "Trash";
+    Layout = "~/Views/MainLayout/Index.cshtml";
+}
+
+<div class="col-md-9">
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <h3 class="card-title">Çöp Kutusu</h3>
+            <div class="card-tools">
+                <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" placeholder="Search Mail">
+                    <div class="input-group-append">
+                        <div class="btn btn-primary">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive mailbox-messages">
+                <table class="table table-hover table-striped">
+                    <!-- Başlık Satırı -->
+                    <thead>
+                        <tr>
+                            <th>Konu</th>
+                            <th>Gönderen</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var msg in Model.Where(m => m.IsDeleted))
+                        {
+                            <tr>
+                                <td>@msg.Subject</td>
+                                <td>@msg.Sender.FirstName @msg.Sender.LastName</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <!-- Geri Al -->
+                                        <form asp-controller="Message" asp-action="RestoreMessage" method="post" style="display:inline-block;">
+                                            <input type="hidden" name="messageId" value="@msg.MessageId" />
+                                            <button type="submit" class="btn btn-default btn-sm" title="Gelen Kutusuna Geri Al">
+                                                <i class="fas fa-undo"></i>
+                                            </button>
+                                        </form>
+
+                                        <!-- Arşivle -->
+                                        <form asp-controller="Message" asp-action="ArchiveFromTrash" method="post" style="display:inline-block;">
+                                            <input type="hidden" name="messageId" value="@msg.MessageId" />
+                                            <button type="submit" class="btn btn-default btn-sm" title="Mesajı Arşivle">
+                                                <i class="fas fa-box"></i>
+                                            </button>
+                                        </form>
+
+                                        <!-- Kalıcı Sil -->
+                                        <form asp-controller="Message" asp-action="DeleteMessage" method="post" class="delete-form" style="display:inline-block;" data-subject="@msg.Subject">
+                                            <input type="hidden" name="messageId" value="@msg.MessageId" />
+                                            <button type="submit" class="btn btn-danger btn-sm" title="Kalıcı Olarak Sil">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.delete-form').forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const subject = form.getAttribute('data-subject');
+
+                Swal.fire({
+                    title: `Mesajı silmek istediğinize emin misiniz?`,
+                    html: `Mesaj: <b>${subject}</b><br>Bu işlemi geri alamazsınız!`,
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Evet, Sil!",
+                    cancelButtonText: "İptal"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    });
+</script>

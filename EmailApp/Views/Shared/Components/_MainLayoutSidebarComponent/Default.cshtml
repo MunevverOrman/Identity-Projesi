@@ -25,32 +25,47 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                <li class="nav-item active">
+                    <a href="/Message/Outbox" class="nav-link">
                         <i class="far fa-envelope"></i> Giden Kutusu
                         <span class="badge bg-primary float-right">@ViewBag.sendedMessage</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/Message/Drafts" class="nav-link">
                         <i class="far fa-file-alt"></i> Taslaklar
                         <span class="badge bg-primary float-right">@ViewBag.draftMessage</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/Message/Trash" class="nav-link">
                         <i class="far fa-trash-alt"></i> Çöp Kutusu
                         <span class="badge bg-primary float-right">@ViewBag.deletedMessage</span>
                     </a>
                 </li>
               
-
                 <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle text-danger"></i>
-                                Önemli Mesajlar
-                        <span class="badge bg-primary float-right">@ViewBag.ImportantMessage</span>
-                            </a>
-                        </li>
+                    <a class="nav-link" href="/Message/ImportantAll">
+                        <i class="fas fa-star text-warning"></i> Yıldızlı Mesajlar
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/Message/Archived" class="nav-link">
+                        <i class="fas fa-archive"></i> Arşivlenmiş
+                        <span class="badge bg-primary float-right">@ViewBag.ArchivedMessage</span>
+                    </a>
+                </li>
+
+              
+                <li class="nav-item">
+                    <a href="/Message/Snoozed" class="nav-link">
+                        <i class="far fa-clock"></i> Ertelenenler
+                        <span class="badge bg-primary float-right">@ViewBag.SnoozedMessage</span>
+                    </a>
+                </li>
+               
+
             </ul>
         </div>
       

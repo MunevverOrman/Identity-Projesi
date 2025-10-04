@@ -1,13 +1,13 @@
 ﻿@model List<Message>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Outbox";
     Layout = "~/Views/MainLayout/Index.cshtml";
 }
 
 <div class="col-md-9">
     <div class="card card-primary card-outline">
         <div class="card-header">
-            <h3 class="card-title">Gelen Kutusu</h3>
+            <h3 class="card-title">Giden Kutusu</h3>
 
             <div class="card-tools">
                 <div class="input-group input-group-sm">
@@ -22,16 +22,34 @@
         </div>
 
         <div class="card-body p-0">
+            <div class="mailbox-controls">
+                <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                    <i class="far fa-square"></i>
+                </button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
+                </div>
+                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
+                <div class="float-right">
+                    1-50/200
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
+                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
             <div class="table-responsive mailbox-messages">
                 <table class="table table-hover table-striped">
                     <!-- Başlık satırı -->
                     <thead>
                         <tr>
-                            <th>Okundu Bilgisi</th>
                             <th>Önemli</th>
-                            <th>Gönderen</th> 
+                            <th>Alıcı</th>
                             <th>Konu</th>
-                            <th>       </th>
+                            <th></th>
                             <th>Tarih</th>
                             <th>İşlemler</th>
                         </tr>
@@ -42,23 +60,7 @@
                         {
                             <tr>
                                 <td>
-                                    <form asp-controller="Message" asp-action="ToggleRead" method="post">
-                                        <input type="hidden" name="messageId" value="@item.MessageId" />
-                                        <button type="submit" class="btn btn-link">
-                                            @if (item.IsRead)
-                                            {
-                                                <span class="badge bg-success">Okundu</span>
-                                            }
-                                            else
-                                            {
-                                                <span class="badge bg-secondary">Okunmadı</span>
-                                            }
-                                        </button>
-                                    </form>
-                                </td>
-
-                                <td>
-                                    <form asp-controller="Message" asp-action="ToggleImportant" method="post">
+                                    <form asp-controller="Message" asp-action="ToggleImportantOutbox" method="post">
                                         <input type="hidden" name="messageId" value="@item.MessageId" />
                                         <button type="submit" class="btn btn-link">
                                             @if (item.IsImportant)
@@ -73,9 +75,11 @@
                                     </form>
                                 </td>
 
-                                <!-- Gönderen sütunu -->
+                                <!-- Alıcı sütunu -->
                                 <td class="mailbox-name">
-                                    <a href="/Message/MessageDetail/@item.MessageId">@item.Sender.FirstName @item.Sender.LastName</a>
+                                    <a href="/Message/MessageDetail/@item.MessageId">
+                                        @item.Receiver.FirstName @item.Receiver.LastName
+                                    </a>
                                 </td>
 
                                 <td class="mailbox-subject">
@@ -87,24 +91,17 @@
 
                                 <td>
                                     <div class="btn-group" role="group">
-                                        <form asp-controller="Message" asp-action="MoveToTrashFromIndex" method="post">
+                                        <form asp-controller="Message" asp-action="MoveToTrashFromOutbox" method="post">
                                             <input type="hidden" name="messageId" value="@item.MessageId" />
                                             <button type="submit" class="btn btn-default btn-sm">
                                                 <i class="far fa-trash-alt"></i>
                                             </button>
                                         </form>
 
-                                        <form asp-controller="Message" asp-action="Archive" method="post">
+                                        <form asp-controller="Message" asp-action="ArchiveFromOutbox" method="post">
                                             <input type="hidden" name="messageId" value="@item.MessageId" />
                                             <button type="submit" class="btn btn-default btn-sm" title="Arşivle">
                                                 <i class="fas fa-box"></i>
-                                            </button>
-                                        </form>
-
-                                        <form asp-controller="Message" asp-action="Snooze" method="post">
-                                            <input type="hidden" name="messageId" value="@item.MessageId" />
-                                            <button type="submit" class="btn btn-default btn-sm" title="Ertele">
-                                                <i class="far fa-clock"></i>
                                             </button>
                                         </form>
                                     </div>
@@ -113,28 +110,6 @@
                         }
                     </tbody>
                 </table>
-            </div>
-
-
-        <div class="card-footer p-0">
-            <div class="mailbox-controls">
-                <button type="button" class="btn btn-default btn-sm checkbox-toggle">
-                    <i class="far fa-square"></i>
-                </button>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></button>
-                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-reply"></i></button>
-                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i></button>
-                </div>
-                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
-
-                <div class="float-right">
-                    1-50/@Model.Count
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -17,7 +17,9 @@
         public bool IsDeleted { get; set; }
         public bool IsImportant { get; set; }
 
-
+        public bool IsArchived { get; set; } 
+        public bool IsSnoozed { get; set; }   
+        public DateTime? SnoozeDate { get; set; }
 
 
     }
